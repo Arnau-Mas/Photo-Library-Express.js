@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Imatge <%= idImatge %> </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style2.css"> <!-- aqui posem / perquè com que es una url dinamica, fa el get de l'arxiu css en una carpeta nombrada com el primer endpoint, pero no existeix, x tant posem / pq fagi la busqueda a public -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  </head>
+<body>
+  <%- include("./partials/header.ejs") %> 
+  <div class="divheight">
+    <div class="w3-container">
+        <h2><%= imatgeTrobada.titol.toUpperCase() %></h2>
+        <div class="w3-card-4" style="width:40%">
+          <img src="<%= imatgeTrobada.url %>" alt="Alps" style="width:100%">
+          <div class="w3-container w3-center">
+            <p class="elp"><%= imatgeTrobada.data %></p>
+          </div>
+        </div>
+      </div>
+  </div>
+  <%- include("./partials/footer.ejs") %> 
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afegir imatge nova</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <%- include("./partials/header.ejs") %> 
+    <div>
+        <h3>Afegir imatge nova</h3>
+        <div  id="messageUrl" class="messageUrlHidden">
+            <p >La URL introduida ja existeix. Siusplau, afeigeix-ne una altra.</p>
+        </div>
+        <form action="/afegir" method="POST">
+        <label for="titol">Títol de la imatge:</label>
+        <input type="text" maxlength="10" pattern="[a-zA-Z0-9-_]{1,10}" name="titol" id="titol" required>
+        <label for="url">URL:</label>
+        <input type="url" name="url" id="url" required>
+        <label for="data">Data:</label>
+        <input type="date" name="data" id="data" required>
+        <input type="submit" value="Enviar">
+    </form>
+    <% if(error){ %>
+        <div class="messageUrl">
+            <p>La URL introduida ja existeix. Siusplau, posa una altra URL.</p>
+        </div> 
+    <% } %> 
+    </div>
+    <%- include("./partials/footer.ejs") %> 
+</body>
+</html>

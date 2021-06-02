@@ -1,0 +1,39 @@
+body{
+    background-color: rgb(165, 233, 253);
+}
+
+.mainflex{
+    display: flex;
+    flex-direction: row;
+}
+.divheight{
+    display: flex;
+    flex-direction: column;
+    height: 557px;
+}
+h3{
+    padding: 40px;
+}
+form{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    gap: 10px;
+
+}
+
+.anchorHeader{
+    text-decoration: none;
+}
+.messageUrl{
+    background-color: red;
+}
+
+.quadratColor{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

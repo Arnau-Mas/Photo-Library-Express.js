@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<title>Mostrar imatges</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="style2.css"> 
+<body>
+  <%- include("./partials/header.ejs") %> 
+  <% totesLesImatges.forEach((imatges)=>{ %>
+  <div class="w3-container">
+    <h2><%= imatges.titol.toUpperCase() %></h2>
+    <div class="w3-card-4" style="width:40%">
+      <img src="<%= imatges.url %>" alt="<% imatges.titol %> " style="width:100%">
+      <div class="w3-container w3-center">
+        <p class="elp"><%= imatges.data %></p>
+        <p class="elp quadratColor" style=" background-color:rgb(<%= imatges.color %>) "><%= imatges.color  %> </p>
+      </div>
+    </div>
+  </div>
+  <%  }) %> 
+  <p>Total d'Imatges trobades: <%=totalImatges  %> </p>  <!-- aixo ens permet afegir expresions i variables de javascript  -->
+  <%- include("./partials/footer.ejs")  %> 
+</body>
+</html>
