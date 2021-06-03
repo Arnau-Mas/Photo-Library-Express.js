@@ -10,11 +10,8 @@
 </head>
 <body>
     <%- include("./partials/header.ejs") %> 
-    <div>
+    <div class="divmain">
         <h3>Afegir imatge nova</h3>
-        <div  id="messageUrl" class="messageUrlHidden">
-            <p >La URL introduida ja existeix. Siusplau, afeigeix-ne una altra.</p>
-        </div>
         <form action="/afegir" method="POST">
         <label for="titol">Títol de la imatge:</label>
         <input type="text" maxlength="10" pattern="[a-zA-Z0-9-_]{1,10}" name="titol" id="titol" required>

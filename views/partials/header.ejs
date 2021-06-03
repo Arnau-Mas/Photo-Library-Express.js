@@ -1,12 +1,12 @@
 <header>
     <div class="w3-container w3-blue">
         <a href="/" class="anchorHeader"><h1>Fototeca Arnau Mas</h1></a>
-        <p>Les imatges més selectes</p>
+        <p>Photo-library made with ExpressJs</p>
       </div>
     <nav>
         <div class="w3-bar w3-black">
-            <a href="/imatges" class="w3-bar-item w3-button">Mostrar imatges</a>
-            <a href="/afegir" class="w3-bar-item w3-button">Afegir imatges</a>
+            <a href="/imatges" class="w3-bar-item w3-button <% if(pagina=="imatges"){%>activeMenu <%} %>  ">Mostrar imatges</a>
+            <a href="/afegir" class="w3-bar-item w3-button button <% if(pagina=="afegir"){%>activeMenu <%} %>">Afegir imatges</a>
         </div>
     </nav>
 </header>

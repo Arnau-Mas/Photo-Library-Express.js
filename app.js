@@ -23,12 +23,15 @@ app.use(express.static('public')); //per q l'app tingui acces a la carpeta publi
 app.use(express.urlencoded({ extended: false })); //per poder tenir acces a les dades del post
 
 app.get("/", (req,res)=>{
-    res.status(200).render("index.ejs");//tambe es pot posar index sense ejs, perque el render es per la carpeta views, i alla nomes hi ha ejs. Motiu pel qual tampoc fa falta posar el nom de la carpeta
+    res.status(200).render("index.ejs",{
+        pagina:"",
+    });//tambe es pot posar index sense ejs, perque el render es per la carpeta views, i alla nomes hi ha ejs. Motiu pel qual tampoc fa falta posar el nom de la carpeta
 })
 
 app.get("/afegir", (req,res)=>{
     res.status(200).render("afegir.ejs", {
         error:false,
+        pagina:"afegir",
     });
 })
 
@@ -66,6 +69,7 @@ app.get("/imatges", (req,res)=>{
     res.status(200).render("imatges.ejs", {
         totesLesImatges:imatges,
         totalImatges:imatges.length,
+        pagina:"imatges",
     });
 })
 
@@ -77,6 +81,7 @@ app.get("/imatges/:idImatge", (req,res)=>{
         res.status(200).render("imatgeid", { 
             idImatge:idImatge,       
             imatgeTrobada: imatgeTrobada,
+            pagina:"imatges",
         })
     }else{
         res.status(404).send("<h1>No se ha encontrado la imagen</h1>");

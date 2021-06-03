@@ -37,3 +37,28 @@ form{
     justify-content: center;
     align-items: center;
 }
+
+.activeMenu{
+    background-color: rgb(59, 193, 255);
+}
+
+.divmain{
+    height: 72.9vh;
+
+}
+.divmain h1{
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.divmain p{
+    padding-left: 270px;
+    font-style: italic;
+}
+.divmain h3{
+    padding-left: 145px;
+}
+
+.inlineDiv{
+    padding-bottom: 20px;
+}
