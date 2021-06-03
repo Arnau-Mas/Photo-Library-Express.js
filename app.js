@@ -2,7 +2,7 @@ const imatges = [{ //creem l'array d'objectes que despres ensenyarem en pantalla
     id: 1,
     titol: "Panda",
     url: "https://static.scientificamerican.com/espanol/cache/file/050D641B-C40F-460A-B892534B0024CB3C_source.jpg",
-    data: "2021-06-02",
+    data: "2020-06-02",
     color: [ 46, 55, 47 ]
 },{
     id:2,
@@ -12,6 +12,7 @@ const imatges = [{ //creem l'array d'objectes que despres ensenyarem en pantalla
     color: [ 54, 63, 57 ]
 }
 ]
+
 const express = require("express"); //requerim el modul express per tenir acces a les funcions d'express
 const app = express(); //emmagatzemem el modul en una variable
 const { getColorFromURL } = require('color-thief-node'); //per pillar el color predominant de cada imatge
@@ -55,6 +56,7 @@ app.post("/afegir", async (req,res)=>{ //hem posat async aqui per poder utilitza
         data:data,
         color:dominantColor
     })
+
     console.log(imatges);
     res.redirect("/imatges");
     }else{
@@ -65,7 +67,6 @@ app.post("/afegir", async (req,res)=>{ //hem posat async aqui per poder utilitza
 })
 
 app.get("/imatges", (req,res)=>{
-    
     res.status(200).render("imatges.ejs", {
         totesLesImatges:imatges,
         totalImatges:imatges.length,

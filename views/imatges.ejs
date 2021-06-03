@@ -5,7 +5,10 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="style2.css"> 
 <body>
-  <%- include("./partials/header.ejs") %> 
+  <%- include("./partials/header.ejs") %>
+  <%     totesLesImatges.sort(function(a,b){
+    return new Date(b.data) - new Date(a.data);
+  }); %> 
   <% totesLesImatges.forEach((imatges)=>{ %>
   <div class="w3-container">
     <h2><%= imatges.titol.toUpperCase() %></h2>
