@@ -11,3 +11,4 @@ A basic Back-End project on __Node.js__ made with the __Express.js__ framework, 
 * Create basic Express.js app
 * Set up the requests
 * Use middlewares
+* Push the data temporarily
